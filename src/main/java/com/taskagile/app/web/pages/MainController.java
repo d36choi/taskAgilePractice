@@ -1,4 +1,4 @@
-package com.taskagile.app.pages;
+package com.taskagile.app.web.pages;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
