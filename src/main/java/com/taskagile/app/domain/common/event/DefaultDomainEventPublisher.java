@@ -4,11 +4,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
-@RequiredArgsConstructor
 @Component
 public class DefaultDomainEventPublisher implements DomainEventPublisher {
 
-  private final ApplicationEventPublisher actualPublisher;
+  private ApplicationEventPublisher actualPublisher;
+
+  public DefaultDomainEventPublisher(ApplicationEventPublisher actualPublisher) {
+    this.actualPublisher = actualPublisher;
+  }
 
   @Override
   public void publish(DomainEvent event) {
