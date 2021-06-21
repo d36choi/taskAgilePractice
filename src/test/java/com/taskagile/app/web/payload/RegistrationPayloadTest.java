@@ -1,6 +1,7 @@
 package com.taskagile.app.web.payload;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -28,6 +29,7 @@ class RegistrationPayloadTest {
     RegistrationPayload payload = new RegistrationPayload();
     Set<ConstraintViolation<RegistrationPayload>> violations = validator.validate(payload);
     assertEquals(3,violations.size());
+    Assertions.assertThat(violations.size()).isEqualTo(3);
   }
   @Test
   public void validate_payloadWithInvalidEmail_shouldFail() {
